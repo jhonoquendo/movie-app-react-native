@@ -1,4 +1,5 @@
 import React, {FC} from "react";
+import config from "../../config/config";
 import { Text,Button, View, Image, StyleSheet } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Result, RootStackParams } from "../../types";
@@ -13,7 +14,7 @@ const Movie: FC<Result> = ({title,poster_path, overview, vote_average}) => {
 
   const { navigate } = useNavigation<MoovieNavigationProps>();
 
-const imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`
+const imageUrl = `${config.BASE_URL_IMG}${poster_path}`
 
 
 const handleViewPress = () => {

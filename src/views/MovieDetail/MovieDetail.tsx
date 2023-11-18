@@ -1,4 +1,5 @@
 import React from "react";
+import config from "../../config/config";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParams } from "../../types";
@@ -10,7 +11,7 @@ const MovieDetail = () => {
   } =
     useRoute<NativeStackScreenProps<RootStackParams, "MovieDetail">["route"]>();
 
-  const imageUrl = `https://image.tmdb.org/t/p/original${poster_path}`;
+  const imageUrl = `${config.BASE_URL_IMG}${poster_path}`;
   const average = vote_average.toFixed(1);
 
   return (
